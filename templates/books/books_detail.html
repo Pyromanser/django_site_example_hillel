@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}Book - {{ book.title }}{% endblock %}
+
+{% block content %}
+    <h1>{{ book.title }} - {{ book.author.full_name }}</h1>
+    <p>{{ book.description|linebreaksbr }}</p>
+    <p><a href="{% url 'update_book' pk=book.pk %}">Update</a></p>
+{% endblock %}
